@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>최주안 돌 잔치 초대장</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/swiper.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/glyphicon.css" rel="stylesheet" />
+    <link href="//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="app" class="app" v-cloak>
+        <i class="heart-ico fa fa-heart"></i>
+        <div class="outer-container swiper-container" v-bind:data-idx="outerSwiper.activeIndex">
+            <div class="swiper-wrapper">
+                <div class="home swiper-slide">
+                    <div class="image">
+                        <span class="heart-place"></span>
+                    </div>
+                    <div class="wrap"></div>
+                    <div class="text">
+                        <div class="title">
+                            <div>최주안</div>
+                            <div>1st BIRTHDAY</div>
+                        </div>
+                        <div class="date">2019년 1월 19일 토요일 11시 30분</div>
+                        <div class="addr">본페뜨 은평점 B1층 솔레이홀</div>
+                        <div class="dday">
+                            <div v-if="calculated">
+                                <span v-if="dday.dd">{{ dday.dd }}일</span>
+                                <span v-if="dday.hh">{{ dday.hh }}시간</span>
+                                <span v-if="dday.mm">{{ dday.mm }}분</span>
+                                <span>{{ dday.ss }}초</span>
+                                <span>{{ before ? '남음' : '지남' }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="buttons">
+                        <button type="button" class="btn" v-on:click="outerSwiper.slideTo(1)">내용 보기</button>
+                        <button type="button" class="btn" v-on:click="outerSwiper.slideTo(2)">사진 보기</button>
+                        <button type="button" class="btn" v-on:click="outerSwiper.slideTo(3)">지도 보기</button>
+                    </div> -->
+                </div>
+                <div class="message swiper-slide">
+                    <div class="image">
+                        <img src="img/greeting.png" />
+                        <span class="heart-place"></span>
+                    </div>
+                    <div class="text">
+                        <div class="greeting">
+                            <span>당신을 초대합니다.</span>
+                        </div>
+                        <div class="core">
+                            <span>오랜 기다림 끝에 <b>새로운 생명</b>을 만났습니다.</span>
+                            <span>우리에게 주신 작은 생명을 바라보면서 한없이 감사했습니다.</span>
+                            <span>그렇게 저희 부부에게로 온 <b>주안이</b>가 어느새 첫 번째 생일을 맞았습니다.</span>
+                            <span><b>주안이</b>를 사랑해주시는 분들께 감사하는 마음으로 자그마한 잔치를 마련했습니다.</span>
+                            <span>오셔서 함께 기뻐해 주시면 감사하겠습니다.</span>
+                        </div>
+                        <div class="from">- 최주안 엄마, 아빠 드림</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="inner-container swiper-container">
+                        <div class="title">
+                            <span>CHOI JUAN'S PICTURES</span>
+                            <span class="heart-place"></span>
+                        </div>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="p in pictures">
+                                <div class="image" v-bind:style="{ backgroundImage : 'url(img/' + p + ')' }"></div>
+                            </div>
+                        </div>
+                        <div class="inner-pagination swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="map swiper-slide">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12642.090362515984!2d126.92507535433275!3d37.61339344117775!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4f94c0e266d3f715!2z67O47Y6Y65yo!5e0!3m2!1sko!2skr!4v1546356509946" allowfullscreen></iframe>
+                    <div class="dest">
+                        <div class="each">
+                            <label>주소</label>
+                            <div class="info">서울시 은평구 통일로71길 16(대조동 84-1)</div>
+                        </div>
+                        <div class="each">
+                            <label>지하철</label>
+                            <div class="info">3호선 불광역 5, 7, 8번 출구에서 국민건강보험공단 방면 5분 거리</div>
+                        </div>
+                        <div class="each">
+                            <label>버스</label>
+                            <div class="info">
+                                <div>초록: 7211, 7718, 7733, 7734, 7720, 7023</div>
+                                <div>파랑: 471, 570, 571, 701, 703, 704, 720, 760, 753</div>
+                                <div>빨강: 9703, 9707, 9710, 9711, 9712</div>
+                            </div>
+                        </div>
+                        <div class="each">
+                            <label>네이버</label>
+                            <div class="info">
+                                <a href="https://m.map.naver.com/search2/site.nhn?query=%EB%B3%B8%ED%8E%98%EB%9C%A8&sm=hty&style=v4&code=21608188#/map"
+                                    target="_blank">네이버 지도</a>
+                                <span>/</span>
+                                <a href="https://m.map.naver.com/directions/?ename=%EB%B3%B8%ED%8E%98%EB%9C%A8%20%EC%9D%80%ED%8F%89%EC%A0%90&ex=126.926227&ey=37.61355&eex=126.9264650&eey=37.6132520&edid=21608188&incomeUrl=https%3A%2F%2Fm.map.naver.com%2Fsearch2%2Fsite.nhn%3Fquery%3D%25EB%25B3%25B8%25ED%258E%2598%25EB%259C%25A8%26sm%3Dhty%26style%3Dv4%26code%3D21608188#/main/null/%25EB%25B3%25B8%25ED%258E%2598%25EB%259C%25A8%2520%25EC%259D%2580%25ED%258F%2589%25EC%25A0%2590,126.926227,37.61355,126.9264650,37.6132520,false,21608188"
+                                    target="_blank">네이버 길 찾기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="outer-pagination swiper-pagination"></div>
+        </div>
+    </div>
+    <script src="js/vue.min.js"></script>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

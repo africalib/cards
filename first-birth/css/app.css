@@ -1,0 +1,391 @@
+html, body {
+  position: relative;
+  height: 100%;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Nanum Square';
+}
+
+.app img {
+  max-width: 100%;
+}
+
+.app .heart-ico {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 90%;
+  z-index: 10;
+  color: #ff3a3a;
+  -webkit-transform: rotate(21deg);
+  transform: rotate(21deg);
+  font-size: 1.4rem;
+}
+
+.app .heart-place {
+  display: inline-block;
+  width: 1.4rem;
+  height: 1.4rem;
+  position: relative;
+  vertical-align: middle;
+}
+
+.app .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.app .swiper-slide {
+  text-align: left;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.app .outer-container .swiper-slide.home {
+  display: block;
+}
+
+.app .outer-container .swiper-slide.home .image {
+  height: 50%;
+  background-image: url(../img/home2.jpg);
+  background-size: 100% auto;
+  background-position: 50% 90%;
+  position: relative;
+}
+
+.app .outer-container .swiper-slide.home .image .heart-place {
+  top: 15%;
+  left: 60%;
+  position: absolute;
+}
+
+.app .outer-container .swiper-slide.home .wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50%;
+}
+
+.app .outer-container .swiper-slide.home .text {
+  color: #555;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+.app .outer-container .swiper-slide.home .text .title {
+  font-size: 1.4rem;
+  color: #000;
+  font-weight: bold;
+  padding: 1.5rem 0 1.3rem 0;
+}
+
+.app .outer-container .swiper-slide.home .text .date {
+  background: #c1926f;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.75rem 0;
+  margin: 0 auto 1rem 0;
+}
+
+.app .outer-container .swiper-slide.home .text .dday {
+  margin-top: 0.75rem;
+  height: 1.5rem;
+}
+
+.app .outer-container .swiper-slide.home .buttons {
+  margin-top: 1.4rem;
+}
+
+.app .outer-container .swiper-slide.home .buttons .btn {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8rem;
+  background-color: #487a8b;
+  border-color: #487a8b;
+  color: #fff;
+  margin: 0 0.1rem;
+}
+
+.app .outer-container .swiper-slide.home .buttons .btn:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.app .outer-container .swiper-slide.message {
+  display: block;
+  font-size: 0;
+  padding: 0;
+}
+
+.app .outer-container .swiper-slide.message .image {
+  margin: 1.75rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.app .outer-container .swiper-slide.message .image img {
+  width: 15rem;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+}
+
+.app .outer-container .swiper-slide.message .image .heart-place {
+  position: absolute;
+  left: 64%;
+  top: 21%;
+}
+
+.app .outer-container .swiper-slide.message .text {
+  letter-spacing: 0.1rem;
+}
+
+.app .outer-container .swiper-slide.message .text .greeting {
+  font-size: 1rem;
+  background: #c1926f;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.75rem 0;
+  margin: 0 auto 1rem 0;
+}
+
+.app .outer-container .swiper-slide.message .text .core {
+  line-height: 2.1rem;
+  font-size: 1rem;
+  padding: 0 1.7rem;
+}
+
+.app .outer-container .swiper-slide.message .text .from {
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: right;
+  margin-top: 0.25rem;
+  padding: 0 1.7rem;
+}
+
+.app .outer-container .swiper-slide.map {
+  display: block;
+  font-size: 0;
+}
+
+.app .outer-container .swiper-slide.map iframe {
+  width: 100%;
+  height: 40%;
+  border: 0;
+}
+
+.app .outer-container .swiper-slide.map .dest {
+  padding: 1.25rem 1.25rem 0 1.25rem;
+}
+
+.app .outer-container .swiper-slide.map .dest .each {
+  font-size: 1rem;
+}
+
+.app .outer-container .swiper-slide.map .dest .each label {
+  font-weight: bold;
+  margin-bottom: 0.1rem;
+  margin-top: 1.25rem;
+}
+
+.app .outer-container .swiper-slide.map .dest .each:first-child label {
+  margin-top: 0;
+}
+
+.app .outer-container .outer-pagination {
+  top: initial;
+  bottom: 0;
+}
+
+.app .outer-container .outer-pagination i.swiper-pagination-bullet {
+  margin: 0 0.5rem;
+  display: inline-block;
+  font-size: 2em;
+  background: none;
+  width: auto;
+  height: auto;
+  opacity: 0.42;
+}
+
+.app .outer-container .outer-pagination i.swiper-pagination-bullet:focus {
+  outline: 0;
+}
+
+.app .outer-container .outer-pagination i.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.app .outer-container[data-idx='2'] .outer-pagination i.swiper-pagination-bullet {
+  color: #fff;
+}
+
+.app .inner-container .title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 1.2rem 0;
+  width: 100%;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  z-index: 5;
+}
+
+.app .inner-container .title .heart-place {
+  position: relative;
+  left: 0.4rem;
+}
+
+.app .inner-container .swiper-slide {
+  width: 100%;
+  background-color: #000;
+  padding: 4rem 0;
+}
+
+.app .inner-container .swiper-slide div.image {
+  height: 100%;
+  width: 100%;
+  background-position: 50% 50%;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.app .inner-container .swiper-slide[data-swiper-slide-index='37'] div.image {
+  background-position: 50% 0;
+}
+
+.app .inner-container .swiper-slide[data-swiper-slide-index='34'] div.image, .app .inner-container .swiper-slide[data-swiper-slide-index='48'] div.image, .app .inner-container .swiper-slide[data-swiper-slide-index='49'] div.image {
+  background-size: auto 100%;
+}
+
+.app .inner-container .inner-pagination {
+  display: none;
+}
+
+.app[v-cloak] {
+  display: none;
+}
+
+@media (min-width: 767px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 375px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 350px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (orientation: landscape) {
+  html {
+    font-size: 12px;
+  }
+  .app .outer-container .swiper-slide.home .image {
+    background-position: 50% 65%;
+  }
+  .app .outer-container .swiper-slide.home .text .title {
+    padding: 1rem 0 0.9rem 0;
+  }
+  .app .outer-container .swiper-slide.home .text .title > div {
+    display: inline-block;
+  }
+  .app .outer-container .swiper-slide.message {
+    padding-top: 6rem;
+  }
+  .app .outer-container .swiper-slide.message .image {
+    padding: 0 1rem;
+    width: 30%;
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .app .outer-container .swiper-slide.message .text {
+    padding: 0 1rem;
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+  }
+  .app .outer-container .swiper-slide.message .text .core {
+    padding: 0;
+    letter-spacing: 0;
+  }
+  .app .outer-container .swiper-slide.message .text .from {
+    padding: 0;
+  }
+  .app .outer-container .swiper-slide.map .dest .each {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .app .outer-container .swiper-slide.map .dest .each:nth-child(2) label {
+    margin-top: 0;
+  }
+  .app .inner-container .swiper-slide div.image {
+    background-size: auto 100%;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1366px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 640px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 568px) {
+  html {
+    font-size: 10px;
+  }
+}
+/*# sourceMappingURL=app.css.map */
